@@ -18,7 +18,8 @@ def Es_numero(dato_ingresado): #hacer que acepte numeros float
         else:
             resultado = True
             
-    elif(dato_ingresado.find("-") != -1): #identifica si es un numero negativo
+    elif(dato_ingresado.find("-") == 0): #identifica si es un numero negativo
+        
         resultado = True
     
     return resultado
@@ -28,17 +29,16 @@ def OperacionDecimal(Operacion): #tiene que recibir como parametro los numeros p
 
     if(Operacion == 1):
         resultado = 1
-        pass
     elif(Operacion == 2):
-        pass
+        resultado = 2
     elif(Operacion == 3):
-        pass
+        resultado = 3
     elif(Operacion == 4):
-        pass
+        resultado = 4
     elif(Operacion == 5):
-        pass
+        resultado = 5
     elif(Operacion == 6):
-        pass
+        resultado = 6
     else: 
         resultado = 0
     return resultado #retorna la operacion a realizar

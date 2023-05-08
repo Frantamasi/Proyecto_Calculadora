@@ -58,6 +58,19 @@ def ingresar_numero():
     return b
 
 def operacion(numeros, operacion):
-
+    resultado=0
+    
     if(operacion == 1):
-        OD.suma(numeros)
+        resultado = OD.suma(numeros)
+    elif(operacion == 2):
+        resultado = OD.resta(numeros)
+    elif(operacion == 3):
+        resultado = OD.multiplicacion(numeros)
+    elif(operacion == 4):
+        resultado = OD.potencia(numeros)    
+    elif(operacion == 5):
+        resultado = OD.division(numeros)
+    elif(operacion == 6):
+        resultado = OD.devisionEntera(numeros)
+   
+    return resultado
