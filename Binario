@@ -1,0 +1,19 @@
+def ConversionADecimal(decimal):
+    resultado = ""
+    condicion = False
+    resto = 0
+    while(condicion == False):
+        resto = decimal % 2
+        decimal = decimal // 2
+        resultado = resultado + str(resto)
+
+        if(decimal == 1):
+            resultado = resultado + str(decimal)
+            condicion = True
+        elif(decimal == 0):
+            condicion = True
+    
+    return resultado[::-1] #devuelve el string invertido
+
+
+print(ConversionADecimal(9))
