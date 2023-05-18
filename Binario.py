@@ -33,4 +33,10 @@ def Conversion_Binario_a_Decimal(binario):    #recibe un string
 
 print(Conversion_Decimal_a_Binario(58))
 print(Conversion_Binario_a_Decimal("111010"))
-
+def Ingresar_Binario():
+    condicion = False
+    binario = ""
+    while(condicion == False):
+        binario = input("ingrese el numero binario: ")
+        #if para validar que sea un binario
+        

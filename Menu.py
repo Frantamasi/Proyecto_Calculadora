@@ -1,7 +1,8 @@
 from os import system
 import Decimal  
 import ValidarDatos as VD
-
+import Binario as B
+import Operaciones_Decimal as OD 
 
 def Menu_Tipo_De_Operacion_Decimal():
     system("cls")
@@ -93,7 +94,7 @@ def nuevoMenu():
                         condicion = True
                 
             elif(base == 2):
-                pass
+                Menu_Binario()
             elif(base == 3):
                 pass
             elif(base == 4):
@@ -166,4 +167,8 @@ def posicion_operando():
     
     return resultado
 
+def Menu_Binario():
+    input("un numero en binario solo puede tener 0 y 1")
+    B.Ingresar_Binario()
 
+nuevoMenu()
