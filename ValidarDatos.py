@@ -54,3 +54,27 @@ def numero_entero(dato_ingresado): #hacer que acepte numeros float
 
 def numero_flotante(dato):
     pass
+
+def numero_binario(dato):
+    error = 0 
+    lista_binario = []
+    
+    for i in range(0, len(dato)):
+        lista_binario.append(dato[i])   #almacena cada posicion del string en una lista
+        lista_binario[i] = (dato[i])
+    
+    for i in range (0, len(lista_binario)):
+
+        if(lista_binario[i] == "1" or lista_binario[i] == "0"): #chequear esto
+            pass
+        else: 
+            error = error + 1
+    
+    if(error != 0):
+        es_binario = False
+        input(f"tu numero tiene {error} errores")
+    else:
+        es_binario = True
+        
+    
+    return es_binario

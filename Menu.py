@@ -66,6 +66,8 @@ def nuevoMenu():
         print("3.   Octal")
         print("4.   Hexadecimal")
         print("")
+        print("5.   Salir")
+        print("")
         base = (input("Ingrese el numero de base que desea utilizar: "))
         
         if(VD.numero_entero(base) == True): #hacer que lo invoque calculadora
@@ -99,6 +101,8 @@ def nuevoMenu():
                 pass
             elif(base == 4):
                 pass
+            elif(base == 5):
+                condicion = True
             else:
                 input("El numero ingresado no es valido ")
                 system("cls")
@@ -168,7 +172,32 @@ def posicion_operando():
     return resultado
 
 def Menu_Binario():
-    input("un numero en binario solo puede tener 0 y 1")
-    B.Ingresar_Binario()
+    
+    condicion = True
+    
+    while(condicion == True):
+        system("cls")
+        print("             BINARIO")
+        print("")
+        print("¿Con que tipo de operacion desea realizar?")
+        print("")
+        print("1.   Conversion")
+        print("2.   Suma")
+        print("3.   Resta")
+        print("")
+        operacion = (input("Ingrese el numero de operacion que desea utilizar: "))
+        
+        if(VD.numero_entero(operacion) == True): 
+            operacion=int(operacion)
+            
+            if(operacion == 1):
+                while(condicion==True):
+
+                    binario = B.Ingresar_Binario()
+                    resultado = B.Conversion_Binario_a_Decimal(binario)
+                    #mostrar resultado
+                    condicion = realizar_otra()
+
+    
 
 nuevoMenu()

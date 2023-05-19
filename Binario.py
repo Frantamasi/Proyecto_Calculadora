@@ -1,3 +1,5 @@
+from os import system
+import ValidarDatos as VD
 def Conversion_Decimal_a_Binario(decimal): #recibe un int
     resultado = ""
     condicion = False
@@ -29,14 +31,24 @@ def Conversion_Binario_a_Decimal(binario):    #recibe un string
         suma = lista_binario[i] * (2**i)   #realiza la conversion
         resultado3 = suma + resultado3
 
+    print(f"{binario} es {resultado3} en decimal")
+    input()
     return resultado3
 
-print(Conversion_Decimal_a_Binario(58))
-print(Conversion_Binario_a_Decimal("111010"))
+#print(Conversion_Decimal_a_Binario(58))
+#print(Conversion_Binario_a_Decimal("111010"))
 def Ingresar_Binario():
     condicion = False
     binario = ""
     while(condicion == False):
+        system("cls")
+        print("un numero en binario solo puede contener 0 y 1")
         binario = input("ingrese el numero binario: ")
-        #if para validar que sea un binario
         
+        condicion = VD.numero_binario(binario)
+        #if para validar que sea un binario
+    
+    print(binario)    
+    input()
+    return binario
+
