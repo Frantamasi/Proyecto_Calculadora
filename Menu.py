@@ -4,51 +4,6 @@ import ValidarDatos as VD
 import Binario as B
 import Operaciones_Decimal as OD 
 
-def Menu_Tipo_De_Operacion_Decimal():
-    system("cls")
-    condicion = False
-    validarDato=0
-    while(condicion == False):
-
-        print("¿Que tipo de operacion desea realizar?")
-        print("")
-        print("1. Suma")
-        print("2. Resta")
-        print("3. Multiplicacion")
-        print("4. Potencia")
-        print("5. Division")
-        print("6. Division entera")
-        print("")
-
-        tipo_operacion = input("Ingrese el numero deseado: ")
-
-        if(VD.Es_numero(tipo_operacion) == True):
-            tipo_operacion = int(tipo_operacion)
-            validarDato = VD.OperacionDecimal(tipo_operacion)
-
-        if(validarDato != 0):
-            condicion = True
-    return tipo_operacion
-
-def realizar_otra():
-    
-    condision = False
-    while(condision == False):
-        print("¿Desea realizar otra operacion?")
-        print("S = si | N = no")
-        decision = input("")
-    
-        if(decision== "s" or decision == "S"):
-            resultado = True
-            condision = True
-        elif(decision== "n" or decision == "N"):
-            resultado = False
-            condision = True
-        else:
-            input("La letra ingresada no corresponde a un valor esperado...")
-            system("cls")
-    
-    return resultado
 
 def nuevoMenu():
     Utiliza = False
@@ -131,6 +86,32 @@ def Menu_Decimal(operando, resultado):
 
     return resultado
             
+def Menu_Tipo_De_Operacion_Decimal():
+    system("cls")
+    condicion = False
+    validarDato=0
+    while(condicion == False):
+
+        print("¿Que tipo de operacion desea realizar?")
+        print("")
+        print("1. Suma")
+        print("2. Resta")
+        print("3. Multiplicacion")
+        print("4. Potencia")
+        print("5. Division")
+        print("6. Division entera")
+        print("")
+
+        tipo_operacion = input("Ingrese el numero deseado: ")
+
+        if(VD.Es_numero(tipo_operacion) == True):
+            tipo_operacion = int(tipo_operacion)
+            validarDato = VD.OperacionDecimal(tipo_operacion)
+
+        if(validarDato != 0):
+            condicion = True
+    return tipo_operacion
+
 def Utilizar_resultado():
     condision = False
     while(condision == False):
@@ -167,6 +148,26 @@ def posicion_operando():
                 condision = True
         else:
             input("el numero ingresada no corresponde a un valor esperado...")
+            system("cls")
+    
+    return resultado
+
+def realizar_otra():
+    
+    condision = False
+    while(condision == False):
+        print("¿Desea realizar otra operacion?")
+        print("S = si | N = no")
+        decision = input("")
+    
+        if(decision== "s" or decision == "S"):
+            resultado = True
+            condision = True
+        elif(decision== "n" or decision == "N"):
+            resultado = False
+            condision = True
+        else:
+            input("La letra ingresada no corresponde a un valor esperado...")
             system("cls")
     
     return resultado

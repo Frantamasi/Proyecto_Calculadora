@@ -1,4 +1,4 @@
-def Es_numero(dato_ingresado): #hacer que acepte numeros float
+def Es_numero(dato_ingresado): 
     resultado = False
     parteentera=dato_ingresado.find(".") #asigna la posicion donde se encuentra el punto en el string
     
@@ -8,19 +8,14 @@ def Es_numero(dato_ingresado): #hacer que acepte numeros float
     
     elif(parteentera != -1): #si entra al estring, quiere decir que es un float
         
-        cantidad_entera = (dato_ingresado[:parteentera]) #asigna una subcadena desde el inicio del string hasta donde esta el punto
-        cantidad_decimal=(dato_ingresado[parteentera+1:]) #asigna una subcadena desde el punto del string hasta el final
-        #numero_en_string = f"{cantidad_entera}"+"."+f"{cantidad_decimal}" #los concatena 
-        
-        otroPunto = cantidad_decimal.find(".") #vuelve a chequear que no haya otro punto
-        if(otroPunto != -1): #si hay otro retorna falso
-            resultado = False
-        else:
-            resultado = True
+        resultado = numero_flotante(dato_ingresado, parteentera)
             
     elif(dato_ingresado.find("-") == 0): #identifica si es un numero negativo
         
-        resultado = True
+        if(dato_ingresado[1:].find("-") != -1): #busca si hay otro "-"
+            resultado = False
+        else:
+            resultado = True
     
     return resultado
 
@@ -44,7 +39,7 @@ def OperacionDecimal(Operacion): #tiene que recibir como parametro los numeros p
     return resultado #retorna la operacion a realizar
 
 
-def numero_entero(dato_ingresado): #hacer que acepte numeros float
+def numero_entero(dato_ingresado): 
     resultado = False
     
     if(dato_ingresado.isdigit() == True):
@@ -52,8 +47,20 @@ def numero_entero(dato_ingresado): #hacer que acepte numeros float
 
     return resultado
 
-def numero_flotante(dato):
-    pass
+def numero_flotante(dato_ingresado, parteentera):
+    
+    cantidad_entera = (dato_ingresado[:parteentera]) #asigna una subcadena desde el inicio del string hasta donde esta el punto
+    cantidad_decimal=(dato_ingresado[parteentera+1:]) #asigna una subcadena desde el punto del string hasta el final
+        #numero_en_string = f"{cantidad_entera}"+"."+f"{cantidad_decimal}" #los concatena 
+        
+    otroPunto = cantidad_decimal.find(".") #vuelve a chequear que no haya otro punto
+    
+    if(otroPunto != -1): #si hay otro retorna falso
+         resultado = False
+    else:
+        resultado = True
+    
+    return resultado
 
 def numero_binario(dato):
     error = 0 

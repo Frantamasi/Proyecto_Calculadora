@@ -39,8 +39,3 @@ def potencia(numeros):
     print(f"{numeros[0]} ** {numeros[1]} = {resultado}")    
     input("")
     return resultado
-
-
-
-
-         
