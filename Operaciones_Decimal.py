@@ -1,5 +1,5 @@
 
-def suma(numeros): #arreglar los parametros 
+def suma(numeros):  
     resultado = 0  #arreglar para que se pueda pasar mas de un numero como parametro
     for i in range(0, len(numeros)):
         resultado = resultado + numeros[i]
@@ -10,8 +10,8 @@ def suma(numeros): #arreglar los parametros
 
 def resta(numeros):
     resultado = 0
-    for i in range(0, len(numeros)):
-        resultado = numeros[i] - resultado 
+    
+    resultado = numeros[0] - numeros[1]
     print(f"{numeros[0]} - {numeros[1]} = {resultado}")    
     input("")
     return resultado
