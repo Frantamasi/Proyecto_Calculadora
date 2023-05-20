@@ -1,5 +1,6 @@
 from os import system
 import ValidarDatos as VD
+import Operaciones_Decimal as Operaciones
 def Conversion_Decimal_a_Binario(decimal): #recibe un int
     resultado = ""
     condicion = False
@@ -34,12 +35,10 @@ def Conversion_Binario_a_Decimal(binario):    #recibe un string
     input()
     return resultado3
 
-def Suma_binario(binario1, binario2):
+def Suma_binario(binario1, binario2): #recibe dos strings e invoca a la operacion suma_B
     lista_binario1 = []
     lista_binario2 = []
     resultado = []
-    acarreo = False 
-    es_la_ultima = 0
 
     for i in range(0, len(binario1)):
         lista_binario1.append(binario1[i])   #almacena cada posicion del string en una lista
@@ -48,52 +47,39 @@ def Suma_binario(binario1, binario2):
         lista_binario2.append(binario2[i])   
         lista_binario2[i] = (binario2[i])
     
-    if(len(lista_binario1) >= len(lista_binario2)):
+    if(len(lista_binario1) == len(lista_binario2)):
+        
+        lista_binario1 = lista_binario1[::-1]   #invierte las listas para trabajarlo del ultimo bit al primero
+        lista_binario2 = lista_binario2[::-1]
+        
+        resultado = Operaciones.Operacion_suma_B(lista_binario1, lista_binario2)
+                
+    elif(len(lista_binario1) > len(lista_binario2)):  #el primero es mayor
         
         lista_binario1 = lista_binario1[::-1]
         lista_binario2 = lista_binario2[::-1]
         
-        for i in range(0, len(lista_binario1)):
-            
-            es_la_ultima = es_la_ultima + 1
+        diferencia_bits = len(lista_binario1) - len(lista_binario2)
 
-            if(lista_binario1[i] == "1" and lista_binario2[i] == "1"):
-
-                resultado.append("0")
-                acarreo = True
-
-            elif(lista_binario1[i] == "0" and lista_binario2[i] == "1"):
-
-                resultado.append("1")
-            
-            elif(lista_binario1[i] == "1" and lista_binario2[i] == "0"):
-
-                resultado.append("1")
-            
-            elif(lista_binario1[i] == "0" and lista_binario2[i] == "0"):
-
-                resultado.append("0")
-
-            if(acarreo == True and es_la_ultima == len(lista_binario1)):
-                
-                resultado.append("1")
-
-            elif(acarreo == True):
-
-                if(lista_binario1[i+1] == "0"):
-                    lista_binario1[i+1] = "1"
-                    acarreo = False
-
-                elif(lista_binario1[i+1] == "1"):
-                    lista_binario1[i+1] = "0"
-                    #acarreo sigue siendo verdadero
-    resultado = resultado[::-1]            
-            
-    print(f"el resultado es {resultado}")
-    input()
+        for i in range (0, diferencia_bits):
+            lista_binario2.append("0")
 
 
-Suma_binario("11", "11")
+        resultado= Operaciones.Operacion_suma_B(lista_binario1, lista_binario2)
+
+    elif(len(lista_binario1) < len(lista_binario2)):  #si el primero es menor
+        
+        lista_binario1 = lista_binario1[::-1]
+        lista_binario2 = lista_binario2[::-1]
+        
+        diferencia_bits = len(lista_binario2) - len(lista_binario1)
+
+        for i in range (0, diferencia_bits):
+            lista_binario1.append("0")
+
+        resultado= Operaciones.Operacion_suma_B(lista_binario1, lista_binario2)
+        
+    return resultado    #agregarle que lo devuelva como string
 
 def Ingresar_Binario():
     condicion = False
@@ -110,3 +96,4 @@ def Ingresar_Binario():
     input()
     return binario
 
+print(Suma_binario("111","1111"))
