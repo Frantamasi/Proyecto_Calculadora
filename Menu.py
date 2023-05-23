@@ -196,7 +196,10 @@ def Menu_Binario():
 
                     binario = B.Ingresar_Binario()
                     resultado = B.Conversion_Binario_a_Decimal(binario)
-                    #mostrar resultado
+                    
+                    print(f"{binario} es {resultado} en decimal")
+                    input("Enter para continuar: ")
+
                     condicion = realizar_otra()
                     system("cls")
             
@@ -211,6 +214,15 @@ def Menu_Binario():
                     condicion = realizar_otra()
                     system("cls")
 
-    
+            elif(operacion == 3):
+                while(condicion==True):
+
+                    binario1 = B.Ingresar_Binario()
+                    binario2 = B.Ingresar_Binario()
+                    resultado = B.Resta_binario(binario1, binario2)
+
+                    print(f"{binario1} - {binario2} = {B.Lista_a_string(resultado)}")
+                    condicion = realizar_otra()
+                    system("cls")
 
 nuevoMenu()
