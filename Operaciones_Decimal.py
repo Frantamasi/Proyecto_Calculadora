@@ -43,7 +43,7 @@ def potencia(numeros):
 
 #binario
 
-def Operacion_suma_B(lista_binario1, lista_binario2):
+def Operacion_suma_B(lista_binario1, lista_binario2,sin_ultimo_acarreo):
     
     resultado = []
     acarreo = False
@@ -69,7 +69,9 @@ def Operacion_suma_B(lista_binario1, lista_binario2):
 
             resultado.append("0")
 
-        if(acarreo == True and es_la_ultima == len(lista_binario1)):
+        if(acarreo == True and es_la_ultima == len(lista_binario1) and sin_ultimo_acarreo == True):
+            pass
+        elif(acarreo == True and es_la_ultima == len(lista_binario1)):
                 
             resultado.append("1")
 

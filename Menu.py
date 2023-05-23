@@ -198,6 +198,18 @@ def Menu_Binario():
                     resultado = B.Conversion_Binario_a_Decimal(binario)
                     #mostrar resultado
                     condicion = realizar_otra()
+                    system("cls")
+            
+            elif(operacion == 2):
+                while(condicion==True):
+
+                    binario1 = B.Ingresar_Binario()
+                    binario2 = B.Ingresar_Binario()
+                    resultado = B.Suma_binario(binario1, binario2)
+
+                    print(f"{binario1} + {binario2} = {B.Lista_a_string(resultado)}")
+                    condicion = realizar_otra()
+                    system("cls")
 
     
 
