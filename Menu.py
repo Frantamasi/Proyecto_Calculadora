@@ -3,7 +3,7 @@ import Decimal
 import ValidarDatos as VD
 import Binario as B
 import Operaciones_Decimal as OD 
-
+import Octal as O
 
 def nuevoMenu():
     Utiliza = False
@@ -53,7 +53,7 @@ def nuevoMenu():
             elif(base == 2):
                 Menu_Binario()
             elif(base == 3):
-                pass
+                Menu_Octal()
             elif(base == 4):
                 pass
             elif(base == 5):
@@ -185,6 +185,7 @@ def Menu_Binario():
         print("1.   Conversion")
         print("2.   Suma")
         print("3.   Resta")
+        print("4.   Volver")
         print("")
         operacion = (input("Ingrese el numero de operacion que desea utilizar: "))
         
@@ -224,5 +225,35 @@ def Menu_Binario():
                     print(f"{binario1} - {binario2} = {B.Lista_a_string(resultado)}")
                     condicion = realizar_otra()
                     system("cls")
+            elif(operacion == 4):
+                condicion = False
+
+def Menu_Octal():
+    condicion = True
+    
+    while(condicion == True):
+        system("cls")
+        print("             OCTAL")
+        print("")
+        print("¿Con que tipo de operacion desea realizar?")
+        print("")
+        print("1.   Conversion")
+        print("2.   Salir")
+        print("")
+        operacion = (input("Ingrese el numero de operacion que desea utilizar: "))
+
+        if(VD.numero_entero(operacion) == True): 
+            operacion=int(operacion)
+            
+            if(operacion == 1):
+                while(condicion==True):
+                    octal = O.Ingresar_octal()
+                    O.Conversion_binario(octal)
+
+                    condicion = realizar_otra()
+                    system("cls")
+            elif(operacion == 2):
+                condicion = False
+
 
 nuevoMenu()

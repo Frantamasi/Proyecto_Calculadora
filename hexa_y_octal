@@ -1,0 +1,53 @@
+def que_hexa_es(binario):
+    hexa = ""
+    if(binario == "0000"):
+        hexa = "0"
+    elif(binario == "0001"):
+        hexa = "1"
+    elif(binario == "0010"):
+        hexa = "2"
+    elif(binario == "0011"):
+        hexa = "3"
+    elif(binario == "0100"):
+        hexa = "4"
+    elif(binario == "0101"):
+        hexa = "5"
+    elif(binario == "0110"):
+        hexa = "6"
+    elif(binario == "0111"):
+        hexa = "7"
+    elif(binario == "1000"):
+        hexa = "8"
+    elif(binario == "1001"):
+        hexa = "9"
+    elif(binario == "1010"):
+        hexa = "A"
+    elif(binario == "1011"):
+        hexa = "B"
+    elif(binario == "1100"):
+        hexa = "C"
+    elif(binario == "1101"):
+        hexa = "D"
+    elif(binario == "1110"):
+        hexa = "E"
+    elif(binario == "1111"):
+        hexa = "F"
+    
+    return hexa
+
+def binario_a_hexa():
+    pass
+
+def hexa_a_binario():
+    pass
+
+###################################################
+
+def que_octal_es():
+    pass
+
+def binario_a_octal():
+    pass
+
+def octal_a_binario():
+    pass

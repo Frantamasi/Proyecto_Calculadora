@@ -85,3 +85,26 @@ def numero_binario(dato):
         
     
     return es_binario
+
+
+def numero_Octal(dato):
+    error = 0 
+    lista_octal = []
+    lista_num_octal = ["0","1","2","3","4","5","6","7"]
+    for i in range(0, len(dato)):
+        lista_octal.append(dato[i])   #almacena cada posicion del string en una lista
+        lista_octal[i] = (dato[i])
+    
+    for i in range (0, len(lista_octal)):
+        if(lista_octal[i] in lista_num_octal):
+            int(lista_octal[i])
+        else:
+            error = 1
+    if(error != 0):
+        es_octal = False
+        input(f"tu numero tiene {error} errores")
+    else:
+        es_octal = True
+        
+    
+    return es_octal
